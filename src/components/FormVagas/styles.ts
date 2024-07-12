@@ -27,6 +27,6 @@ export const FormButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #0056b3; /* Altere a cor conforme necessário */
+    background-color: #0056b3;
   }
 `

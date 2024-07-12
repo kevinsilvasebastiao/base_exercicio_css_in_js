@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react'
-import { FormContainer } from './styles'
+import { FormContainer, FormInput, FormButton } from './styles'
 
 type Props = {
   aoPesquisar: (termo: string) => void
@@ -15,12 +15,12 @@ const FormVagas = ({ aoPesquisar }: Props) => {
 
   return (
     <FormContainer onSubmit={aoEnviarForm}>
-      <input
+      <FormInput
         placeholder="Front-end, fullstack, node, design"
         onChange={(e) => setTermo(e.target.value)}
         type="search"
       />
-      <button type="submit">Pesquisar</button>
+      <FormButton type="submit">Pesquisar</FormButton>
     </FormContainer>
   )
 }

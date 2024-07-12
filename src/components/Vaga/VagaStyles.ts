@@ -31,9 +31,9 @@ export const VagaDetalheItem = styled.li`
 `
 
 export const VagaLink = styled.a`
-  border: 1px solid var(--cor-secundaria);
-  background-color: var(--cor-principal);
-  color: var(--cor-segundaria);
+  border: 1px solid var(--cor-principal);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-principal);
   display: inline-block;
   padding: 8px 16px;
   text-decoration: none;
@@ -48,8 +48,8 @@ export const VagaLink = styled.a`
   }
 
   &:hover {
-    border-color: var(--cor-principal);
-    background-color: var(--cor-secundaria);
-    color: var(--cor-principal);
+    border-color: var(--cor-secundaria);
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
   }
 `
