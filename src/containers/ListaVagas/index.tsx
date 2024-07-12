@@ -1,12 +1,10 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import FormVagas from '../../components/FormVagas'
-
 import Vaga from '../../components/Vaga'
-
-import styles from './ListaVagas.module.css'
+import { ListaVagasContainer } from './ListaVagasStyles'
 
 type Vaga = {
-  id: string
+  id: number
   titulo: string
   localizacao: string
   nivel: string
@@ -16,7 +14,7 @@ type Vaga = {
   requisitos: string[]
 }
 
-const vagas = [
+const vagas: Vaga[] = [
   {
     id: 1,
     titulo: 'Desenvolvedor front-end',
@@ -35,7 +33,7 @@ const vagas = [
     modalidade: 'pj',
     salarioMin: 5000,
     salarioMax: 6500,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'NodeJS']
   },
   {
     id: 3,
@@ -45,7 +43,7 @@ const vagas = [
     modalidade: 'pj',
     salarioMin: 4000,
     salarioMax: 6000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'React', 'NodeJS']
   },
   {
     id: 4,
@@ -55,27 +53,27 @@ const vagas = [
     modalidade: 'clt',
     salarioMin: 4000,
     salarioMax: 5000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['UI/UX Design', 'Adobe XD', 'Figma']
   },
   {
     id: 5,
-    titulo: 'Desenvolvedor front-end',
+    titulo: 'Desenvolvedor front-end sênior',
     localizacao: 'remoto',
-    nivel: 'senior',
+    nivel: 'sênior',
     modalidade: 'clt',
     salarioMin: 7000,
     salarioMax: 8000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Redux']
   },
   {
     id: 6,
     titulo: 'Desenvolvedor front-end para projeto internacional',
     localizacao: 'remoto',
-    nivel: 'senior',
+    nivel: 'sênior',
     modalidade: 'pj',
     salarioMin: 12000,
     salarioMax: 15000,
-    requisitos: ['HTML', 'CSS', 'JavaScript', 'jQuery']
+    requisitos: ['HTML', 'CSS', 'JavaScript', 'React', 'Angular', 'Vue']
   },
   {
     id: 7,
@@ -97,9 +95,9 @@ const ListaVagas = () => {
   )
 
   return (
-    <div>
+    <ListaVagasContainer>
       <FormVagas aoPesquisar={(termo: string) => setFiltro(termo)} />
-      <ul className={styles.vagas}>
+      <ul className="vagas">
         {vagasFiltradas.map((vag) => (
           <Vaga
             key={vag.id}
@@ -113,7 +111,7 @@ const ListaVagas = () => {
           />
         ))}
       </ul>
-    </div>
+    </ListaVagasContainer>
   )
 }
 
